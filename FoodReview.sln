@@ -4,13 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodReview.Server", "FoodReview.Server\FoodReview.Server.csproj", "{1212D644-6564-4688-86B8-ADA0EA9B9B86}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DBBF431A-C997-474C-92AB-1AE8156BA635} = {DBBF431A-C997-474C-92AB-1AE8156BA635}
-	EndProjectSection
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "foodreview.client", "foodreview.client\foodreview.client.esproj", "{E78EC889-84DD-4CA0-B46A-FF189A87C695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodReview.Infrastructure", "FoodReview.Infrastructure\FoodReview.Infrastructure.csproj", "{DBBF431A-C997-474C-92AB-1AE8156BA635}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodReview.Infrastructure", "FoodReview.Infrastructure\FoodReview.Infrastructure.csproj", "{DBBF431A-C997-474C-92AB-1AE8156BA635}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

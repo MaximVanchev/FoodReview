@@ -6,28 +6,29 @@
 //using MyArtPlace.Core.Services;
 //using MyArtPlace.Data;
 //using MyArtPlace.Infrastructure.Data;
-//using MyArtPlace.Infrastructure.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using FoodReview.Infrastructure.Data;
+using FoodReview.Infrastructure.Data.Repositories;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtension
     {
-        //public static IServiceCollection AddApplicationServices(this IServiceCollection services)
-        //{
-        //    services.AddScoped<IApplicationDbRepository, ApplicationDbRepository>();
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.AddScoped<IApplicationDbRepository, ApplicationDbRepository>();
 
-        //    return services;
-        //}
+            return services;
+        }
 
-        //public static IServiceCollection AddApplicationDbContexts(this IServiceCollection services, IConfiguration config)
-        //{
-        //    var connectionString = config.GetConnectionString("DefaultConnection");
-        //    services.AddDbContext<MyArtPlaceContext>(options =>
-        //        options.UseSqlServer(connectionString));
-        //    services.AddDatabaseDeveloperPageExceptionFilter();
-        //    //services.Configure<MailSettings>(config.GetSection("MailSettings"));
+        public static IServiceCollection AddApplicationDbContexts(this IServiceCollection services, IConfiguration config)
+        {
+            var connectionString = config.GetConnectionString("DefaultConnection");
+            services.AddDbContext<FoodReviewContext>(options =>
+                options.UseSqlServer(connectionString));
+            //services.Configure<MailSettings>(config.GetSection("MailSettings"));
 
-        //    return services;
-        //}
+            return services;
+        }
     }
 }
