@@ -21,6 +21,20 @@ namespace Microsoft.Extensions.DependencyInjection
             return services;
         }
 
+        public static IServiceCollection AddReactCORS(this IServiceCollection services, IConfiguration config)
+        {
+            var connectionString = config.GetConnectionString("ReactConnection");
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowReact",
+                    builder => builder.WithOrigins(connectionString)
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod());
+            });
+
+            return services;
+        }
+
         public static IServiceCollection AddApplicationDbContexts(this IServiceCollection services, IConfiguration config)
         {
             var connectionString = config.GetConnectionString("DefaultConnection");

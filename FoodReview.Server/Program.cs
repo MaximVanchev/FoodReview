@@ -6,13 +6,7 @@ using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReact",
-        builder => builder.WithOrigins("https://localhost:5173")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod());
-});
+builder.Services.AddReactCORS(builder.Configuration);
 
 builder.Services.AddApplicationDbContexts(builder.Configuration);
 

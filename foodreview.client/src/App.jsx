@@ -39,7 +39,7 @@ function App() {
     );
     
     function populateWeatherData() {
-        fetch("https://localhost:32769/WeatherForecast/GetWeatherForecast") // Adjust URL as needed
+        fetch("https://localhost:32773/WeatherForecast/GetWeatherForecast") // Adjust URL as needed
             .then(response => {
                 //if (!response.ok) throw new Error("Network response was not ok");
                 //console.log(response);
