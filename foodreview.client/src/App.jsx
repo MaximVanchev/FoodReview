@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import conStr from "./conStr.json";
 
 function App() {
     const [forecasts, setForecasts] = useState();
@@ -39,7 +40,7 @@ function App() {
     );
     
     function populateWeatherData() {
-        fetch("https://localhost:32773/WeatherForecast/GetWeatherForecast") // Adjust URL as needed
+        fetch(`${conStr.REACT_APP_API_URL}/WeatherForecast/GetWeatherForecast`) // Adjust URL as needed
             .then(response => {
                 //if (!response.ok) throw new Error("Network response was not ok");
                 //console.log(response);
